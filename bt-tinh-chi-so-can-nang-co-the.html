@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt-tinh-chi-so-can-nang-co-the</title>
+</head>
+<body>
+
+<p>Cân nặng (kg)</p>
+<input type="number" value="weight" name="weight" id="Weight">
+<p>Chiều cao (m)</p>
+<input type="number" value="height" name="height" id="Height"><br><br>
+<button onclick="bodyMassIndex()" value="Click">Xem</button>
+<br>
+<p id="lol"></p>
+<script>
+    function bodyMassIndex() {
+        let cannang = document.getElementById("Weight").value;
+        let chieucao = document.getElementById("Height").value;
+        let weighT = parseFloat(cannang);
+        let heighT = parseFloat(chieucao);
+        let bmi = weighT/(heighT*heighT);
+        if (bmi<18)
+            document.getElementById('lol').innerHTML = bmi + " : Underweight"
+        else if (bmi<25)
+            document.getElementById('lol').innerHTML = bmi + " : Normal"
+        else if (bmi<30)
+            document.getElementById('lol').innerHTML = bmi + " : Overweight"
+        else
+            document.getElementById('lol').innerHTML = bmi + " : Obese"
+    }
+</script>
+
+</body>
+</html>
